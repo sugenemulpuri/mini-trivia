@@ -1,0 +1,8 @@
+          <div id="scoreBox">
+          <h1 id="scoreListTitle">High Score List</h1>
+          
+            <div id="Score" *ngFor="let score of scoreList">
+              <p>{{ score.username }}</p>
+              <p>{{ score.score }}</p>
+          </div>
+        </div>

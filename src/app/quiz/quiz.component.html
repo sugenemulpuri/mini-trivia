@@ -1,0 +1,20 @@
+<form #form="ngForm" (ngSubmit)="submitQuiz(form)">
+    
+    <input type="text"name="username" ngModel placeholder="Enter your username here.">
+    <div class="questions" *ngFor="let question of questionList; index as i">
+    <h1>{{ question.question_name }}</h1>
+    <label>
+    <input type="radio" name="{{ i }}" id="choice_1{{ i }}" value="{{question.choice_1}}"> A: {{ question.choice_1 }}></label>
+    <label>
+    <input type="radio" name="{{ i }}" id="choice_2{{ i }}" value="{{question.choice_2}}"> B: {{ question.choice_2 }}></label>
+    <label>
+    <input type="radio" name="{{ i }}" id="choice_3 {{ i }}" value="{{question.choice_3}}"> C: {{ question.choice_3 }}></label>
+    <label>
+    <input type="radio" name="{{ i }}" id="choice_4 {{ i }}" value="{{question.choice_4}}"> D: {{ question.choice_4 }}></label>
+    </div>
+
+    <button>Submit</button>
+</form>
+
+
+

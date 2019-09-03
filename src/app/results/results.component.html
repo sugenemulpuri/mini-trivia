@@ -1,0 +1,25 @@
+       <section id="headerOfResults">
+          <div id="currentUserResults">
+            <h1 id="name">{{ userScore.username }}</h1>
+            <h3>
+              Your score is: <span id="scoreNumber">{{ userScore.score }}</span>
+            </h3>
+          </div>
+        </section>
+        <section id="answersSection">
+          <div
+            *ngFor="let question of questionAnswers.concat(userChoices); index as i"
+          >
+            <div *ngIf="i < 10" id="answerComparisonBox">
+              <p class="question">
+                {{ question.question_name }}
+              </p>
+              <p id="correctAnswer">{{ question.answer }}</p>
+              <p id="usersAnswer">Your answer was: {{ userChoices[i] }}</p>
+            </div>
+          </div>
+        </section>
+        <button id="scoreListButton" (click)="navigateToScoreList()">
+          See the top scores.
+        </button>
+        <button id="retakeQuizButton" (click)="navigateToQuiz()">Retake the quiz.</button>
